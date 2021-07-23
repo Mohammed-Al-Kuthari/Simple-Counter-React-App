@@ -6,6 +6,13 @@ export default function Counters({
   onDecrement,
   onDelete,
 }) {
+  if (counters.length === 0)
+    return (
+      <div className="alert alert-info text-center" role="alert">
+        <strong>Sorry!</strong> it's no counters here add counter to continue
+        ...
+      </div>
+    );
   return (
     <div className="card shadow-sm p-3">
       {counters.map((counter) => (
